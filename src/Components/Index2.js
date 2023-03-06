@@ -9,10 +9,14 @@ import Forget from './LoginPage/Forget';
 import Service from './ServicePage/Service';
 import OptionSignup from './OptionPage/OptionSignup';
 import OptionLogin from './OptionPage/OptionLogin';
+import DeepState from '../context/DeepState';
+import Alert from './Alert';
 const Index2 = () => {
   return (
     <>
-    <Router>
+       <Router>
+    <DeepState>
+      <Alert/>
        <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/OptionSignup' element={<OptionSignup/>}/>
@@ -31,7 +35,9 @@ const Index2 = () => {
         <Route path='/Service' element={<Service/>}/>
        </Routes>
 
+    </DeepState>
     </Router>
+   
     </>
   )
 }

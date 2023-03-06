@@ -3,6 +3,7 @@ import React from 'react'
 import Contact from './ContactUsPage/Contact'
 import Aboutus from './AboutUs/Aboutus'
 import Navbar from '../Navbar/Navbar';
+// import Service from '../ServicePage/Service';
 import './HomeStyle.css'
 const Home = () => {
     return (
@@ -17,7 +18,7 @@ const Home = () => {
                     <div className="space"></div>
                     <div className="service navbar-container">
                             <button className="button service button-name">
-                               <a href="/service">service</a> </button>
+                               <a href="Service">service</a> </button>
                     </div>
                     <div className="space"></div>
                     <div className="datacontainer">

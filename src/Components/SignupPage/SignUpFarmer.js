@@ -91,3 +91,9 @@ const SignUpFarmer = () => {
 }
 
 export default SignUpFarmer
+
+
+
+
+
+

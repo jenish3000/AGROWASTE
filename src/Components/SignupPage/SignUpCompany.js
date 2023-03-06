@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
-import LoginCompany from '../LoginPage/LoginCompany'
+import React, { useContext, useState } from 'react'
+import LoginCompany from '../LoginPage/LoginCompany' 
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../Navbar/Navbar';
 import "./style1.css"
+import DeepContext from '../../context/DeepContext';
 
 const SignUpCompany = () => {
-
+  const {showAlert}=useContext(DeepContext);
 
   const navigate = useNavigate()
 
@@ -17,18 +18,18 @@ const SignUpCompany = () => {
   const Companysignup = async (e) => {
     e.preventDefault();
     if (company.password === company.cpassword) {
-      const data = await axios.post('/signup', {
+      const data = await axios.post('http://localhost:5000/SignUpCompany', {
         name: company.name,
         mobileno: company.mobileno,
         email: company.email,
         password: company.password,
       })
-
-      if (data.status === 200) {
-        alert(data.data.message);
+      console.log(data.data);
+      if (data.data.success) {
+        showAlert(data.data.msg,'success');
         navigate('/LoginCompany')
       } else {
-        alert(data.data.message);
+        showAlert(data.data.msg,'danger');
       }
     }
     else{
