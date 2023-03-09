@@ -6,7 +6,7 @@ import Home from '../HomePage/Home'
 import Navbar from '../Navbar/Navbar';
 import "./service.css"
 import DeepContext from '../../context/DeepContext';
-
+// this is new
 const Service = () => {
   const {showAlert}=useContext(DeepContext);
 
@@ -52,7 +52,7 @@ const Service = () => {
 
 
   return (
-    <>
+    <>    
       <Navbar style="background-color:#1a4664;">
       </Navbar>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
@@ -69,12 +69,12 @@ const Service = () => {
 
             <label>Phone no.</label>
           </div>
-        <div class="txt_field">
+        <div className="txt_field">
           <input type="text" name="acre" required value={service.acre} onChange={handleInput}/>
           <span></span>
           <label>How much land you have?<small>(in acers*)</small></label>
         </div>
-        <div class="txt_field">
+        <div className="txt_field">
           <input type="text" name="ptype" required value={service.ptype} onChange={handleInput}/>
           <span></span>
           <label>Which crops are planted in your field?</label>
@@ -94,11 +94,11 @@ const Service = () => {
         <div style="margin : 20px auto">
           <fieldset>
             <legend style="text-align: center;">What do you want to give ? </legend>
-            <label class="lab">
+            <label className="lab">
               <input type="radio" name="type"  value={service.type} onChange={handleInput}/>
               Only Residues
             </label>
-            <label class="lab">
+            <label className="lab">
               <input type="radio" name="type" value={service.type} onChange={handleInput}/>
               Both Seeds and Residues
             </label>
@@ -114,7 +114,7 @@ const Service = () => {
             <option value="answer3">Machine4</option>
           </select>
         </div>
-        <div style="margin: auto;" class="cen">
+        <div style="margin: auto;" className="cen">
          <input type="submit" value="a1" />
         </div>
         
